@@ -18,7 +18,7 @@ Available command line arguments and their defaults:
 
 ```
 --port=5555
---type="TFBertModelRunner" (server only)
+--type="TFBertModelRunner" (server only - this currently does nothing, see todo list below)
 --url="model/" (server only)
 --base="bert-large-uncased-whole-word-masking-finetuned-squad" (server only)
 --tweet="George W. Bush and Bill Clinton visited a Ukrainian church in Chicago to show solidarity with the people of Ukraine." (client only)
@@ -61,6 +61,7 @@ The server accepts two types of requests:
 
 - Switch to poller for server
 - Add timeout to client test
+- Actually instantiate the model runner from cmd_args.type
 - Stop container after x minutes? Or is this configurable in GCP?
 - Push image to Dockerhub
 - Finish writing todo list
