@@ -4,7 +4,6 @@ FROM python:3.9.11-bullseye
 
 WORKDIR /app
 
-ENV LISTEN_PORT=5555
 ENV RUNNER_TYPE="TFBertModelRunner"
 ENV MODEL_URL="model/"
 ENV BASE="bert-large-uncased-whole-word-masking-finetuned-squad"
@@ -17,4 +16,4 @@ COPY . .
 
 EXPOSE ${LISTEN_PORT}
 
-CMD python model_runner_server.py --port=${LISTEN_PORT} --type=${RUNNER_TYPE} --url=${MODEL_URL} --base=${BASE}
+CMD python app.py --type=${RUNNER_TYPE} --url=${MODEL_URL} --base=${BASE}
