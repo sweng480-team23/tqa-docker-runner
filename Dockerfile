@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE ${LISTEN_PORT}
 
-CMD python app.py --port=${LISTEN_PORT} --type=${RUNNER_TYPE} --url=${MODEL_URL} --base=${BASE}
+CMD ./run_app.sh ${LISTEN_PORT} ${RUNNER_TYPE} ${MODEL_URL} ${BASE}
