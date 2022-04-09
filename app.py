@@ -4,6 +4,7 @@ from flask import Flask
 from flask import request
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--port', default=5555)
 parser.add_argument('--type', default="TFBertModelRunner")
 parser.add_argument('--url', default="model/")
 parser.add_argument('--base', default="bert-large-uncased-whole-word-masking-finetuned-squad")
@@ -34,4 +35,4 @@ def run_pipeline():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run("0.0.0.0", port=cmd_args.port)
